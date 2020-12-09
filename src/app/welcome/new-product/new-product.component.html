@@ -1,0 +1,38 @@
+<div class="container text-center mt-4">
+    <h1>New product</h1>
+    <form class="form-signin">
+        <input type="text" [(ngModel)]="productName" name="name" class="form-control mt-2" placeholder="Product name"
+            required maxlength="50" autofocus="" #name="ngModel">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="red fz-12">
+            <small *ngIf="name.errors.required">
+                Name is required.
+            </small>
+            <br>
+        </div>
+        <input type="text" [(ngModel)]="productId" name="id" class="form-control mt-2" placeholder="Product Id"
+            required maxlength="13" pattern="[0-9]{1,13}" #id="ngModel">
+        <div *ngIf="id.invalid && (id.dirty || id.touched)" class="red fz-12">
+            <small *ngIf="id.errors.required">
+                Id is required.
+            </small>
+            <small *ngIf="id.errors.pattern">
+                Enter valid Id.
+            </small>
+            <br>
+        </div>
+        <input type="text" [(ngModel)]="productManager" name="manager" class="form-control mt-2" placeholder="Product manager"
+             maxlength="30" #manager="ngModel">
+        <input type="date" [(ngModel)]="startDate" name="date" class="form-control mt-2" placeholder="Sales start date"
+             required #date="ngModel">
+         <div *ngIf="date.invaldate && (date.dirty || date.touched)" class="red fz-12">
+             <small *ngIf="date.errors.required">
+                 Date is required.
+             </small>
+        
+             <br>
+         </div>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" [disabled]="name.invalid || id.invalid || date.invalid" type="submit"  (click)="onSubmit()">Submit</button>
+        <button class="btn btn-lg btn-primary btn-block ml-2" (click)="clear()">Clear</button>
+    </form>
+</div>

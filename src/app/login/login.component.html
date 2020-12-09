@@ -1,0 +1,26 @@
+<div class="text-center container mt-4">
+    <form class="form-signin" (ngSubmit)="onSubmit()">
+        <h1 class="h3 mb-3 font-weight-normal">Please login in</h1>
+        <small class="red" *ngIf="incorrectUserData">Email or password is incorrect.</small>
+        <input type="email" [(ngModel)]="userName" name="name" class="form-control" placeholder="Email address"
+            required="" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" autofocus="" #name="ngModel">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="red fz-12">
+            <small *ngIf="name.errors.required">
+                Email is required.
+            </small>
+            <small *ngIf="name.errors.pattern">
+                Enter valid email.
+            </small>
+            <br>
+        </div>
+        <input type="password" [(ngModel)]="userPassword" name="password" class="form-control" placeholder="Password"
+            required="" #password="ngModel">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="red fz-12">
+                <small *ngIf="password.errors.required">
+                    Password is required.
+                </small>
+            </div>
+            <br>
+        <button class="btn btn-lg btn-primary btn-block" [disabled]="name.invalid || password.invalid" type="submit">Login</button>
+    </form>
+</div>

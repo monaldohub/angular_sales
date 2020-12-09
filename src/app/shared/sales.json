@@ -1,0 +1,42 @@
+{"salesData":[
+    {
+        "productID": "5068764589210",
+        "productName": "Yukon Gold Potatos",
+        "salesQ1": 120005,
+        "salesQ2": 184557,
+        "salesQ3": 150624,
+        "salesQ4": 109383,
+        "select": false
+    },
+    {
+        "productID": "5746890234585",
+        "productName": "Butte Russet Potatos ",
+        "salesQ1": 24005,
+        "salesQ2": 284500,
+        "salesQ3": 290657,
+        "salesQ4": 350022,
+        "select": false
+    },
+    {
+        "productID": "5449873501259",
+        "productName": "Red Cloud Potatos",
+        "salesQ1": 97800,
+        "salesQ2": 85300,
+        "salesQ3": 87458,
+        "salesQ4": 100000,
+        "select": false
+    },
+    {
+        "productID": "5639814580025",
+        "productName": "Charlotte Potatos",
+        "salesQ1": 97800,
+        "salesQ2": 85300,
+        "salesQ3": 87458,
+        "salesQ4": 100000,
+        "select": false
+    }
+],
+"userDetails":{
+    "email": "test123@gmail.com",
+    "password": "test123" 
+}}

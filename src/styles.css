@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+.cursor{
+    cursor: pointer;
+}
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    outline: none !important;
+}
+.red{
+    color: red;
+}
+.fz-12{
+    font-size: 12px;
+}
+
+.width-full{
+    width: 100%;
+}
+.fz-36{
+    font-size: 36px;
+}
+.float-right{
+    float: right;
+}
+.blue{
+    color: blue;
+}

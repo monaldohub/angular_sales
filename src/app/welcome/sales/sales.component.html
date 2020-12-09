@@ -1,0 +1,64 @@
+<div class="container text-center">
+    <h1>Sales</h1>
+
+    <h5 class="float-right">Search:
+        <input type="text" [(ngModel)]="searchProduct">
+    </h5>
+    <table class="table">
+        <thead >
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th colspan="4" class="p-0">
+                    Sales
+                    <tr>
+                        <th width="250">2019Q1</th>
+                        <th width="250">2019Q2</th>
+                        <th width="250">2019Q3</th>
+                        <th width="250">2019Q4</th>
+                    </tr>
+                </th>
+                <th>Total Sales</th>
+                <th>Action</th>
+            </tr>
+        
+          </thead>
+          <tbody>
+              <tr *ngFor="let data of salesData  | productSearch:searchProduct">
+                <td>
+                    <label *ngIf="!data.select">{{data.productID}}</label>
+                    <input *ngIf="data.select" [(ngModel)]="productId" type="text">
+
+                </td>
+                <td>
+                    <label *ngIf="!data.select">{{data.productName}}</label>
+                    <input *ngIf="data.select" [(ngModel)]="productName" type="text">
+                </td>
+                <td>
+                    <label *ngIf="!data.select">{{data.salesQ1}}</label>
+                    <input type="number" *ngIf="data.select" [(ngModel)]="salesQ1" type="text">
+                </td>
+                <td>
+                    <label *ngIf="!data.select">{{data.salesQ2}}</label>
+                    <input type="number" *ngIf="data.select" [(ngModel)]="salesQ2" type="text">
+                </td>
+                <td>
+                    <label *ngIf="!data.select">{{data.salesQ3}}</label>
+                    <input type="number" *ngIf="data.select" [(ngModel)]="salesQ3" type="text">
+                </td>
+                <td>
+                    <label *ngIf="!data.select">{{data.salesQ4}}</label>
+                    <input type="number" *ngIf="data.select" [(ngModel)]="salesQ4" type="text">
+                </td>
+                <td>{{(data?.salesQ1 + data?.salesQ2 + data?.salesQ3 + data?.salesQ4)}}</td>
+                <td>
+                    <label *ngIf="!data.select" (click)="editProduct(data.productID)">Edit</label>
+                    <label *ngIf="data.select" (click)="saveeProduct(data.productID)">Save</label>
+                </td>
+              </tr>
+          </tbody>
+    </table>
+    <div class="float-right cursor blue" (click)="addProduct()">
+        Add product
+    </div>
+</div>
